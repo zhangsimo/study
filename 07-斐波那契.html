@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// 题目：有个人想知道，一年之内一对兔子能繁
+// 殖多少对？于是就筑了一道围墙把一对兔子关在里面。已
+// 知一对兔子每个月可以生一对小兔子，而一对兔子从出生后第3
+// 个月起每月生一对小兔子。假如一年内没有发生死亡现象，那么
+// ，一对兔子一年内（12个月）能繁殖成多少对？
+//  月份            兔子情况         兔子对数
+        //   1                1小               1对  
+        //   2                1中               1对
+        //   3                1大1小            2对
+        //   4                1大1中1小         3
+        //   5                2大1中2小         5
+        //   6                3大2中3小         8
+        //   7                5大3中5小         13
+        //   8                8大5中8小         21
+        //   ...
+    
+    function fn (n) {
+    if (n == 1 || n == 2){
+        return 1
+    }
+    return (fn(n-1) + fn(n-2))
+    }
+
+        </script>
+</body>
+</html>
