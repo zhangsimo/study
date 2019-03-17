@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //递归函数
+        //定义: 函数内部调用了 自己
+        // 注意点: 一定要留出口不然会把自己调死
+
+        // var count = 0 
+        // function fn(){
+        //     count++
+           
+        //     if(count < 5){
+        //         console.log(count);
+        //         fn()
+                
+        //     }
+        // }
+        // fn()
+
+        // 公园里有一堆桃子，猴子每天吃掉一半，挑出一个坏的扔掉，第6天的时候发现还剩1个桃子，问原来有多少个桃子
+
+         var peach = 0
+        var n = 0
+         function fn(){
+                n++
+             peach += 2*n+1+1;
+            
+             if(n == 6){
+                 return peach
+             }
+             fn()
+         }
+     var f =  fn()
+     console.log(f);
+     
+       
+         
+        // 递归的使用思想: 化归思想,对于未知的问题, 转化成已知的问题
+        </script>
+</body>
+</html>
