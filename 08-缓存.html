@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+</head>
+<body>
+
+        <script>
+
+            // 缓存 :存储数据的容器
+
+            // 在js中可以用数组或者对象来存储数据,用键存值,用键取值,这样就可以实现即可以存值又可以取值
+
+
+            // 使用缓存的思路,
+            // 先去对应的容器中查找是否有对应的值,如果有,取出来使用
+            //  如果没有 先计算结果,然后把结果存储到容器中
+
+
+            var moon = {};
+
+            function fn(n){
+
+               if(n===1 || n ===2){
+                   return 1
+               }
+             
+               if(moon[n]){
+                   return moon[n]
+               }else{
+
+              var res =  fn(n-1) + fn(n-2)
+              moon[n] = res
+              return res
+            }
+        }
+            console.log(fn(10));
+            
+
+        </script>
+</body>
+</html>
