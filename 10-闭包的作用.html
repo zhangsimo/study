@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+</head>
+<body>
+
+        <script>
+
+            // 闭包的作用
+            // 1.保护数据的安全
+            // 2. 保持数据的持久性
+
+            // var count = 0
+            // function fn() {
+            //     count++
+            //     console.log("函数调用的次数" + count);
+                
+            // }
+            // fn();
+
+            function outer(){
+                var count = 0
+                function fn(){
+                    count++
+                    console.log("调用了" + count);
+                    
+                }
+                return fn
+            }
+            var res = outer()
+            res()
+            res()
+
+            //闭包的作用:
+            // 保护了数据的安全
+            // 保持了数据的持久性
+
+
+            // 全局作用域 ,当页面关闭的时候 全局作用域才会销毁
+
+            // 当函数调用的时候, 会在内存内开辟一个新的空间,来执行函数, 当函数执行完毕的时候
+            //开辟的空间会销毁,用来节省内存
+
+            //闭包占用的内存是无法销毁的
+
+        </script>
+</body>
+</html>

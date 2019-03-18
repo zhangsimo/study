@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+</head>
+<body>
+
+        <script>
+
+            //银行存钱案例
+            var money = 0 
+
+            function save(name , num){
+                money += num;
+                console.log("尊敬的客户"+name+"你此次存款"+num+"元,余额"+money+"元");
+            }
+
+            save('zs' , 1000)
+            
+            function getMoney(name , num) {
+                money -= num 
+                console.log("尊敬的客户"+name+"你此次取款"+num+"元,余额"+money+"元");
+
+            }
+
+            getMoney('zs' , 500)
+
+            // 变量暴露在全局中 不安全,会被随时改变
+
+            function kaihu(){
+                var money = 0
+                function save(name , num){
+                money +=num;
+                console.log("尊敬的客户"+name+"你此次存款"+num+"元,余额"+money+"元");
+
+                };
+                function getMoney(name , num) {
+                money -= num 
+                console.log("尊敬的客户"+name+"你此次取款"+num+"元,余额"+money+"元");
+
+            }
+
+            return {
+                save: save,
+                getMoney : getMoney
+            }
+            }
+
+            console.dir(kaihu());
+            var xm = kaihu()
+            xm.save('xm' , 15000)
+
+            xm.getMoney('xm' ,10000)
+
+            var xm = null // 释放内存
+        </script>
+</body>
+</html>
