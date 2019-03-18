@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 闭包
+        // 函数外部访问函数内部的值
+
+        function out(){
+            var num = 110
+
+            function inner(n){
+                num = n 
+                console.log(num);
+            }
+            return inner
+        }
+
+        var f = out()
+        f(1)
+      //最终达到在函数外部修改函数内部的值
+
+    //   闭包
+    // 闭包是函数和声明该函数的词法环境组合
+    
+
+    // 形成闭包的条件
+    //有两个函数 , 要是嵌套关系 , 内部的函数访问外部函数的的变量,就形成了闭包
+        
+        
+        </script>
+</body>
+</html>
